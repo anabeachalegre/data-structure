@@ -1,7 +1,6 @@
 import java.util.Scanner;
 
 public class LinkedList {
-
     /*
      * --> Method to check if the list is empty
      * --> Creates the parameter quantity (int qty) that refers to the amount of
@@ -38,7 +37,7 @@ public class LinkedList {
         }
     }
 
-    public static int insertItems(double vet[], int index) {
+    public static int insertItems(double vet[], int index, int size) {
         /*
          * Create a new object in the Scanner class (instantiate)
          * It's important not to close the scanner, if so, it's not possible to continue
@@ -51,7 +50,8 @@ public class LinkedList {
             System.out.println("The list is full and can't include new items");
         } else {
             // If the list is not full, then it's possible to add new items to it
-            System.out.println("Insert a value: ");
+
+            System.out.println("Insert a value " + (index) + " of " + size);
 
             /*
              * Calls the method nextDouble throught the scanner object dataInput that will
@@ -68,8 +68,6 @@ public class LinkedList {
             index++;
         }
 
-        // Closes the scanner
-
         // Store the values at the qty parameter
         return index;
     }
@@ -81,9 +79,13 @@ public class LinkedList {
         } else {
             /*
              * Creates the variable i, that representes the index of the vector and
-             * initiates it in the position 0. Compares the index with the quantity of items
+             * initiates it in the position 0.
+             * 
+             * Compares the index with the quantity of items
              * at the list and if it's smaller than the quantity, it adds one more position
-             * to the index. This runs through all the for in a loop until i < qty it's not
+             * to the index.
+             * 
+             * This runs through all the for in a loop until i < qty it's not
              * true anymore, than the loop stops.
              */
             for (int i = 0; i < qty; i++) {
@@ -155,36 +157,9 @@ public class LinkedList {
             }
 
             newVet[j++] = vet[i];
-
         }
         System.out.println("Value deleted successfully");
         return newVet;
 
     }
 }
-
-// public static int delete(double vet[], int qty) {
-// /*
-// * The index position of the value that is gonna be deleted is the index
-// * returned in the method search
-// */
-// int index = search(vet, qty);
-
-// // When the index position is -1 it's not possible to delete anything
-// if (index == -1) {
-// return qty;
-// } else {
-// /*
-// * When the index positon is != -1 the value located at this index will be
-// * substituted to the value located at the previous index
-// */
-// vet[index] = vet[(qty - 1)];
-// System.out.println("Value deleted successfully");
-// /*
-// * This method will return the qty of items at the list minus 1 (that was
-// * deleted)
-// */
-// return --qty;
-
-// }
-// }
